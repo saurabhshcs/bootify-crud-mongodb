@@ -1,0 +1,10 @@
+com/techsharezone/bootifycrudm/exception/UserException.java
+ com.techsharezone.bootifycrudm.exception.UserException
+com/techsharezone/bootifycrudm/repository/UserRepository.java
+ com.techsharezone.bootifycrudm.repository.UserRepository
+com/techsharezone/bootifycrudm/model/User.java
+ com.techsharezone.bootifycrudm.model.User
+com/techsharezone/bootifycrudm/BootifyCrudMongodbApplication.java
+ com.techsharezone.bootifycrudm.BootifyCrudMongodbApplication
+com/techsharezone/bootifycrudm/controller/UserController.java
+ com.techsharezone.bootifycrudm.controller.UserController
