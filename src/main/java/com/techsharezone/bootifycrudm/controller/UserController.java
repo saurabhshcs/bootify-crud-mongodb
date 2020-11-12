@@ -31,20 +31,28 @@ public class UserController {
     }
 
     @GetMapping("/getUsers")
-    public List<User> getUsers(){
+    public List<User> getUsers() {
         LOG.info("Fetch all users..");
         return userRepository.findAll();
     }
 
-    @RequestMapping(value = "/{userId}", method = RequestMethod.GET)
+    @GetMapping("/{userId}")
     public User getUser(@PathVariable String userId) {
         LOG.info("Getting user with ID: {}.", userId);
 
         Optional<User> user = userRepository.findById(userId);
-        if (user.isPresent()){
+        if (user.isPresent()) {
             return user.get();
         }
 
         return user.orElseThrow(() -> new UserException("No user found for this " + userId));
     }
+
+    @PostMapping("/create")
+    public ResponseEntity<HttpStatus> create(@RequestBody User user) {
+        LOG.info("Create User");
+        userRepository.save(user);
+        return new ResponseEntity<HttpStatus>(HttpStatus.CREATED);
+    }
+
 }
